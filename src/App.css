@@ -1,0 +1,343 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(
+      90deg,
+      rgb(155, 11, 35) 0%,
+      rgb(175, 19, 97) 100%,
+      rgb(155, 11, 35) 0%
+    )
+    fixed;
+  background: -moz-linear-gradient(
+      90deg,
+      rgb(155, 11, 35) 0%,
+      rgb(175, 19, 97) 100%,
+      rgb(155, 11, 35) 0%
+    )
+    fixed;
+  background: -webkit-linear-gradient(
+      90deg,
+      rgb(155, 11, 35) 0%,
+      rgb(175, 19, 97) 100%,
+      rgb(155, 11, 35) 0%
+    )
+    fixed;
+  background: -o-linear-gradient(
+      90deg,
+      rgb(155, 11, 35) 0%,
+      rgb(175, 19, 97) 100%,
+      rgb(155, 11, 35) 0%
+    )
+    fixed;
+  background: -ms-linear-gradient(
+      90deg,
+      rgb(155, 11, 35) 0%,
+      rgb(175, 19, 97) 100%,
+      rgb(155, 11, 35) 0%
+    )
+    fixed;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: fit-content;
+  height: fit-content;
+  text-align: center;
+  margin: 128px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+  position: relative;
+}
+
+h1 {
+  margin: 32px 0;
+  color: #91cfff;
+  font-size: 34px;
+}
+
+.complete {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+#todo__form {
+  margin-bottom: 32px;
+}
+
+.todo__input {
+  padding: 14px 32px 14px 16px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid #9d81d4;
+  outline: none;
+  width: 320px;
+  background: rgb(4, 4, 88);
+  background-color: transparent;
+  color: #fff;
+}
+
+.todo__input::placeholder {
+  color: #e2e2e2;
+}
+
+textarea {
+  padding: 8px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.todo__button {
+  padding: 16px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(
+    90deg,
+    rgb(73, 58, 102) 0%,
+    rgb(77, 34, 104) 100%
+  );
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.todo__input.edit {
+  border: 2px solid #149fff;
+  border-radius: 4px;
+  width: 100%;
+  margin: 0.5em auto;
+}
+
+.todo__button.edit {
+  background: linear-gradient(
+    90deg,
+    rgba(20, 159, 255, 1) 0%,
+    rgba(17, 122, 255, 1) 100%
+  );
+  padding: 16px 22px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  .todo__input {
+    width: 95%;
+  }
+  .todo__input.edit {
+    width: 100%;
+    margin: 0 auto;
+  }
+  todo__inputDescription edit {
+    width: 100%;
+  }
+
+  .todo__button {
+    width: 95%;
+    margin-bottom: 1em;
+  }
+}
+
+.dayTime {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+}
+
+.dayTime > p {
+  margin-right: 5px;
+}
+
+.days {
+  display: flex;
+  list-style-type: none;
+  width: fit-content;
+  margin: 10px auto;
+}
+
+.days::-webkit-scrollbar {
+  display: none;
+}
+
+.days__option {
+  margin: 10px;
+  padding: 5px;
+  transition: 0.3s;
+  opacity: 0.4;
+  color: #fff;
+}
+
+.days__option:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.days__option.clicked {
+  opacity: 1;
+  transform: scale(1.1);
+  border-bottom: 1px solid #fff;
+}
+
+.todo__row {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+
+  margin: 4px auto;
+  color: rgb(30, 0, 65);
+  background: linear-gradient(
+    180deg,
+    rgb(241, 241, 227) 0%,
+    rgb(187, 187, 133) 100%
+  );
+
+  padding: 16px;
+  border-radius: 5px;
+  width: 40vw;
+  transition: 0.4s;
+}
+
+.todo__row:hover {
+  transform: scale(1.01);
+}
+
+.todo__rowTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo__rowdInnerDropdownDiv {
+  height: 15px;
+  margin-bottom: -2%;
+  width: 100%;
+  transition: 0.4s;
+}
+
+.todo__rowdInnerDropdownDiv:hover {
+  height: 15px;
+  border: 1px solid white;
+  border-radius: 2px;
+  margin-bottom: -2%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.todo__descriptionRender {
+  height: 15vh;
+  width: 100%;
+  margin: 10px 0px;
+}
+
+.todo__descriptionForm {
+  width: 36vw;
+}
+
+@media screen and (max-width: 870px) {
+  .todo__row {
+    width: 60vw;
+  }
+  .todo__descriptionRender {
+    height: 16vh;
+  }
+  .todo__descriptionForm {
+    width: 56vw;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 700px) {
+  .todo__row {
+    width: 70vw;
+  }
+  .todo__descriptionRender {
+    height: 16vh;
+  }
+  .todo__descriptionForm {
+    width: 64vw;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  body {
+    background-size: 110%;
+  }
+  .todo__row {
+    width: 100%;
+  }
+  .todo__descriptionRender {
+    height: 20%;
+  }
+  .todo__descriptionForm {
+    width: 90vw;
+  }
+}
+
+.todo__description::placeholder {
+  color: white;
+}
+
+.todo__row:nth-child(4n + 1) {
+  background: linear-gradient(
+    180deg,
+    rgb(136, 91, 226) 0%,
+    rgb(94, 0, 218) 100%
+  );
+}
+
+.todo__row:nth-child(4n + 2) {
+  background: linear-gradient(
+    180deg,
+    rgb(241, 160, 237) 0%,
+    rgb(240, 89, 169) 100%
+  );
+}
+
+.todo__row:nth-child(4n + 3) {
+  background: linear-gradient(
+    180deg,
+    rgb(76, 178, 252) 0%,
+    rgba(17, 122, 255, 1) 100%
+  );
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+.delete__icon {
+  color: white;
+  margin: 0px 10px;
+}
+
+.edit__icon {
+  color: #fff;
+}
+
+.delete__icon:hover {
+  color: white;
+  margin: 0px 10px;
+  transform: scale(1.09);
+}
+
+.edit__icon:hover {
+  color: #fff;
+  transform: scale(1.09);
+}
+
+.check__icon:hover {
+  transform: scale(1.09);
+}
+
+.dropdown__icon.collapse {
+  cursor: pointer;
+}
